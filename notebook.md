@@ -45,15 +45,17 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-15 | HASHTAGS: 10–14 hashtags on past posts coincided with 23–130 impressions; hard cap 3–5 niche tags.
 - 2026-07-15 | DENSE INFOGRAPHICS: multi-word AI-generated infographics produce spelling artifacts; default to ≤4-word hero overlays. Infographic format only as a rare exception with letter-by-letter QC of EVERY word.
 - 2026-07-15 | SPAM SIGNALS: "for today only, special discount" framing reads as spam to a B2B feed; sell through value + a question — the gig link does the quiet work.
+- 2026-07-15 | IMAGE FETCH BLOCKED (env): the remote sandbox's network policy blocks the Higgsfield CDN (d8j0ntlcm91z4.cloudfront.net), so generated images cannot be downloaded and viewed for QC (curl and WebFetch both 403; Zapier code actions are domain-locked to api.linkedin.com). Unverifiable image = never publish it; ran the text-only fallback (text was 9/10). FIX NEEDED: allowlist the Higgsfield CDN host in the Claude Code environment network policy, or image posts stay impossible.
+- 2026-07-15 | MODEL SUBSTITUTION: Higgsfield fulfills "nano_banana_2" requests with model "nano_banana_flash" — always record the ACTUAL model from the job result, not the requested one.
 
 ## Hook rotation log (keep last 8)
-(empty — format: YYYY-MM-DD | family | hook line)
+2026-07-15 | pain question | "Why do so many automation projects cost more than the manual work they replaced?"
 
 ## Pillar rotation log (keep last 5)
-(empty)
+2026-07-15 | AI business impact
 
 ## Style rotation log (keep last 5)
-(empty)
+2026-07-15 | listicle
 
 ## Gig rotation log (keep last 5)
-(empty)
+2026-07-15 | AI systems (build-ai-websites-chatbots-mobile-apps-and-custom-software)

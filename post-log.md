@@ -1,4 +1,4 @@
 # POST LOG — one entry per run, newest last
 Format: date time (Tashkent) | pillar | topic | hook family + hook | style | gig | image yes/no + overlay | textQC N/10 (att) | imgQC N/10 (att) | result
 
-(empty — first run appends here)
+2026-07-15 22:02 (Tashkent) | AI business impact | When NOT to automate — 3 signs a workflow should stay manual | pain question + "Why do so many automation projects cost more than the manual work they replaced?" | listicle | AI systems gig (build-ai-websites-chatbots-mobile-apps-and-custom-software) | image: no — generated (overlay "AUTOMATE? NOT YET") but unverifiable: sandbox network policy blocks the Higgsfield CDN, QC impossible | textQC 9/10 (1 att) | imgQC n/a (1 gen att, could not view) | result: PUBLISHED TEXT-ONLY — https://www.linkedin.com/feed/update/urn:li:share:7483204412438466560/
