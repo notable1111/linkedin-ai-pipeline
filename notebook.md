@@ -49,24 +49,29 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-15 | IMAGE FETCH BLOCKED (env): the remote sandbox's network policy blocked the Higgsfield CDN (d8j0ntlcm91z4.cloudfront.net), so images could not be downloaded for QC — run 1 fell back to text-only. RESOLVED same day: owner allowlisted the CDN host; downloads verified working. If a future run gets 403 again, check the environment's network policy first.
 - 2026-07-15 | TRAILING-MARK ARTIFACT: nano_banana_flash added a stray apostrophe/prime after the last overlay word in 2 of 3 attempts. Fix that worked: spell the headline out line by line in the prompt and state explicitly that the text ends with the final letter (no apostrophe, prime, tick, or symbol after it). Always ZOOM into the end of the last word during image QC — the mark is invisible at full-canvas view.
 - 2026-07-15 | MODEL SUBSTITUTION: Higgsfield fulfills "nano_banana_2" requests with model "nano_banana_flash" — always record the ACTUAL model from the job result, not the requested one.
-- 2026-07-15 | ZAPIER TOOL UNAVAILABLE (env): a run got a fully QC-approved text (9/10) and image (10/10) but could not publish — no Zapier tool ever registered in the session. Full diagnosis (all layers checked): connector auth OK, enabled-in-chat OK, server handshake OK (Zapier's instructions text was delivered), network proxy OK — but the tool list never registered, and a direct call to mcp__Zapier__list_enabled_zapier_actions returned "No such tool available". NOT fixable from inside a session. FIX (owner side): disconnect/reconnect the Zapier connector in claude.ai settings, verify on mcp.zapier.com that the LinkedIn share action is still enabled (a server with zero enabled actions can connect yet expose nothing), then use a FRESH session — tool registration happens at session start. Pipeline rule confirmed: stop-and-skip, never blind retry; the approved post survives in the log for the next run to publish.
+- 2026-07-15 | ZAPIER TOOL UNAVAILABLE (env): a run got a fully QC-approved text (9/10) and image (10/10) but could not publish — no Zapier tool ever registered in the session. Full diagnosis (all layers checked): connector auth OK, enabled-in-chat OK, server handshake OK (Zapier's instructions text was delivered), network proxy OK — but the tool list never registered, and a direct call to mcp__Zapier__list_enabled_zapier_actions returned "No such tool available". NOT fixable from inside a session. FIX (owner side): disconnect/reconnect the Zapier connector in claude.ai settings, verify on mcp.zapier.com that the LinkedIn share action is still enabled (a server with zero enabled actions can connect yet expose nothing), then use a FRESH session — tool registration happens at session start. Pipeline rule confirmed: stop-and-skip, never blind retry; the approved post survives in the log for the next run to publish. RESOLVED next session: the very next fresh session had mcp__Zapier__* tools registered normally (LinkedIn share action present, list_enabled_zapier_actions worked first try) — confirms the fix is simply "retry in a new session," no other owner action was actually needed that time.
+- 2026-07-16 | IMAGE/TEXT NUMBER MISMATCH: an image prompt asked for a scene depicting "half" rejected but the model rendered a 14-reject/1-approve grid (~93% reject), visually contradicting the overlay text's "HALF" claim — cost 1 point on image QC (9/10 instead of 10/10) under topic relevance. Still passed, but for any hook/overlay with a specific ratio or count, state the exact visual ratio explicitly in the scene description (e.g. "exactly 5 of 10 marked rejected, 5 approved") rather than trusting the model to infer it from the word "half".
 
 ## Hook rotation log (keep last 8)
 2026-07-15 | pain question | "Why do so many automation projects cost more than the manual work they replaced?"
 2026-07-15 | how-to promise | "How to test your game idea in one week — before you spend money on art."
 2026-07-15 | mini-story opener | "I once shipped AI-generated code without reading it first. It broke a save system." (SKIPPED — publish blocked)
+2026-07-16 | shocking number | "I throw out about half of every AI image batch before a client ever sees it."
 
 ## Pillar rotation log (keep last 5)
 2026-07-15 | AI business impact
 2026-07-15 | technical expertise (AI + game dev)
 2026-07-15 | common mistakes (SKIPPED — publish blocked)
+2026-07-16 | behind-the-scenes
 
 ## Style rotation log (keep last 5)
 2026-07-15 | listicle
 2026-07-15 | story→lesson→CTA
 2026-07-15 | before-after transformation (SKIPPED — publish blocked)
+2026-07-16 | data+insight
 
 ## Gig rotation log (keep last 5)
 2026-07-15 | AI systems (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-15 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-15 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets) (SKIPPED — publish blocked)
+2026-07-16 | AI images (create-ai-generated-images-with-professional-editing)
