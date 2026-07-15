@@ -46,17 +46,22 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-15 | HASHTAGS: 10–14 hashtags on past posts coincided with 23–130 impressions; hard cap 3–5 niche tags.
 - 2026-07-15 | DENSE INFOGRAPHICS: multi-word AI-generated infographics produce spelling artifacts; default to ≤4-word hero overlays. Infographic format only as a rare exception with letter-by-letter QC of EVERY word.
 - 2026-07-15 | SPAM SIGNALS: "for today only, special discount" framing reads as spam to a B2B feed; sell through value + a question — the gig link does the quiet work.
-- 2026-07-15 | IMAGE FETCH BLOCKED (env): the remote sandbox's network policy blocks the Higgsfield CDN (d8j0ntlcm91z4.cloudfront.net), so generated images cannot be downloaded and viewed for QC (curl and WebFetch both 403; Zapier code actions are domain-locked to api.linkedin.com). Unverifiable image = never publish it; ran the text-only fallback (text was 9/10). FIX NEEDED: allowlist the Higgsfield CDN host in the Claude Code environment network policy, or image posts stay impossible.
+- 2026-07-15 | IMAGE FETCH BLOCKED (env): the remote sandbox's network policy blocked the Higgsfield CDN (d8j0ntlcm91z4.cloudfront.net), so images could not be downloaded for QC — run 1 fell back to text-only. RESOLVED same day: owner allowlisted the CDN host; downloads verified working. If a future run gets 403 again, check the environment's network policy first.
+- 2026-07-15 | TRAILING-MARK ARTIFACT: nano_banana_flash added a stray apostrophe/prime after the last overlay word in 2 of 3 attempts. Fix that worked: spell the headline out line by line in the prompt and state explicitly that the text ends with the final letter (no apostrophe, prime, tick, or symbol after it). Always ZOOM into the end of the last word during image QC — the mark is invisible at full-canvas view.
 - 2026-07-15 | MODEL SUBSTITUTION: Higgsfield fulfills "nano_banana_2" requests with model "nano_banana_flash" — always record the ACTUAL model from the job result, not the requested one.
 
 ## Hook rotation log (keep last 8)
 2026-07-15 | pain question | "Why do so many automation projects cost more than the manual work they replaced?"
+2026-07-15 | how-to promise | "How to test your game idea in one week — before you spend money on art."
 
 ## Pillar rotation log (keep last 5)
 2026-07-15 | AI business impact
+2026-07-15 | technical expertise (AI + game dev)
 
 ## Style rotation log (keep last 5)
 2026-07-15 | listicle
+2026-07-15 | story→lesson→CTA
 
 ## Gig rotation log (keep last 5)
 2026-07-15 | AI systems (build-ai-websites-chatbots-mobile-apps-and-custom-software)
+2026-07-15 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
