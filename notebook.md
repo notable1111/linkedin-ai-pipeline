@@ -49,19 +49,24 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-15 | IMAGE FETCH BLOCKED (env): the remote sandbox's network policy blocked the Higgsfield CDN (d8j0ntlcm91z4.cloudfront.net), so images could not be downloaded for QC — run 1 fell back to text-only. RESOLVED same day: owner allowlisted the CDN host; downloads verified working. If a future run gets 403 again, check the environment's network policy first.
 - 2026-07-15 | TRAILING-MARK ARTIFACT: nano_banana_flash added a stray apostrophe/prime after the last overlay word in 2 of 3 attempts. Fix that worked: spell the headline out line by line in the prompt and state explicitly that the text ends with the final letter (no apostrophe, prime, tick, or symbol after it). Always ZOOM into the end of the last word during image QC — the mark is invisible at full-canvas view.
 - 2026-07-15 | MODEL SUBSTITUTION: Higgsfield fulfills "nano_banana_2" requests with model "nano_banana_flash" — always record the ACTUAL model from the job result, not the requested one.
+- 2026-07-15 | ZAPIER TOOL UNAVAILABLE (env): a run got a fully QC-approved text (9/10) and image (10/10) but could not publish — the Zapier action-execution tool (execute_zapier_write_action / list_enabled_zapier_actions, etc.) never surfaced via ToolSearch even though ListConnectors showed the Zapier connector connected + enabled in chat. ~10 varied search queries tried; every other connected server (Higgsfield, GitHub, Figma, Gmail, Vercel, Pixellab) exposed its tools normally, Zapier did not. Correctly treated as a stop-and-skip, not a blind retry. If this recurs, check the environment's MCP tool-loading state for the Zapier server specifically before assuming the pipeline logic is at fault.
 
 ## Hook rotation log (keep last 8)
 2026-07-15 | pain question | "Why do so many automation projects cost more than the manual work they replaced?"
 2026-07-15 | how-to promise | "How to test your game idea in one week — before you spend money on art."
+2026-07-15 | mini-story opener | "I once shipped AI-generated code without reading it first. It broke a save system." (SKIPPED — publish blocked)
 
 ## Pillar rotation log (keep last 5)
 2026-07-15 | AI business impact
 2026-07-15 | technical expertise (AI + game dev)
+2026-07-15 | common mistakes (SKIPPED — publish blocked)
 
 ## Style rotation log (keep last 5)
 2026-07-15 | listicle
 2026-07-15 | story→lesson→CTA
+2026-07-15 | before-after transformation (SKIPPED — publish blocked)
 
 ## Gig rotation log (keep last 5)
 2026-07-15 | AI systems (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-15 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
+2026-07-15 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets) (SKIPPED — publish blocked)
