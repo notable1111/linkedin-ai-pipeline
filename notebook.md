@@ -58,24 +58,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-15 | mini-story opener | "I once shipped AI-generated code without reading it first. It broke a save system." (SKIPPED — publish blocked)
 2026-07-16 | shocking number | "I throw out about half of every AI image batch before a client ever sees it."
 2026-07-16 | behind-the-scenes | "Most clients never ask what \"source code included\" actually means."
+2026-07-16 | pain question | "Why does a rough browser demo get more real feedback than a polished trailer?"
 
 ## Pillar rotation log (keep last 5)
-2026-07-15 | AI business impact
 2026-07-15 | technical expertise (AI + game dev)
 2026-07-15 | common mistakes (SKIPPED — publish blocked)
 2026-07-16 | behind-the-scenes
 2026-07-16 | technical expertise (AI + game dev)
+2026-07-16 | trends
 
 ## Style rotation log (keep last 5)
-2026-07-15 | listicle
 2026-07-15 | story→lesson→CTA
 2026-07-15 | before-after transformation (SKIPPED — publish blocked)
 2026-07-16 | data+insight
 2026-07-16 | educational deep-dive
+2026-07-16 | before-after transformation
 
 ## Gig rotation log (keep last 5)
-2026-07-15 | AI systems (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-15 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-15 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets) (SKIPPED — publish blocked)
 2026-07-16 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-16 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
+2026-07-16 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
