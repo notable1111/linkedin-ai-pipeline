@@ -51,6 +51,7 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-15 | MODEL SUBSTITUTION: Higgsfield fulfills "nano_banana_2" requests with model "nano_banana_flash" — always record the ACTUAL model from the job result, not the requested one.
 - 2026-07-15 | ZAPIER TOOL UNAVAILABLE (env): a run got a fully QC-approved text (9/10) and image (10/10) but could not publish — no Zapier tool ever registered in the session. Full diagnosis (all layers checked): connector auth OK, enabled-in-chat OK, server handshake OK (Zapier's instructions text was delivered), network proxy OK — but the tool list never registered, and a direct call to mcp__Zapier__list_enabled_zapier_actions returned "No such tool available". NOT fixable from inside a session. FIX (owner side): disconnect/reconnect the Zapier connector in claude.ai settings, verify on mcp.zapier.com that the LinkedIn share action is still enabled (a server with zero enabled actions can connect yet expose nothing), then use a FRESH session — tool registration happens at session start. Pipeline rule confirmed: stop-and-skip, never blind retry; the approved post survives in the log for the next run to publish. RESOLVED next session: the very next fresh session had mcp__Zapier__* tools registered normally (LinkedIn share action present, list_enabled_zapier_actions worked first try) — confirms the fix is simply "retry in a new session," no other owner action was actually needed that time.
 - 2026-07-16 | IMAGE/TEXT NUMBER MISMATCH: an image prompt asked for a scene depicting "half" rejected but the model rendered a 14-reject/1-approve grid (~93% reject), visually contradicting the overlay text's "HALF" claim — cost 1 point on image QC (9/10 instead of 10/10) under topic relevance. Repeated same day on a second run: prompt explicitly stated "exactly half... a clear, balanced visual split" for a locked/unlocked folder count, but the model still rendered an uneven 8-glowing/6-locked split — stating the ratio explicitly in words is NOT sufficient, the model does not reliably count. Fix: only use a literal item-count scene when the overlay/hook itself makes a specific numeric claim that must visually match (then verify the actual count during image QC and dock/regenerate on mismatch); otherwise avoid count-based scene concepts entirely and use a non-numeric visual metaphor instead.
+- 2026-07-17 | SPLIT-COMPOSITION IMBALANCE: a left/right "before vs after" split concept (traditional studio gear vs. glowing AI product) rendered the "old/traditional" side visibly busier and more detailed than the minimalist "new/AI" side — cost 1 point on image QC under style-lock consistency. Fix: for any split/comparison scene, explicitly instruct equal visual weight and matching level of geometric simplicity on both halves, not just matching color/lighting rules.
 
 ## Hook rotation log (keep last 8)
 2026-07-15 | pain question | "Why do so many automation projects cost more than the manual work they replaced?"
@@ -59,24 +60,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-16 | shocking number | "I throw out about half of every AI image batch before a client ever sees it."
 2026-07-16 | behind-the-scenes | "Most clients never ask what \"source code included\" actually means."
 2026-07-16 | pain question | "Why does a rough browser demo get more real feedback than a polished trailer?"
+2026-07-17 | mini-story opener | "A client asked me why AI product images cost so much less than a photo shoot."
 
 ## Pillar rotation log (keep last 5)
-2026-07-15 | technical expertise (AI + game dev)
 2026-07-15 | common mistakes (SKIPPED — publish blocked)
 2026-07-16 | behind-the-scenes
 2026-07-16 | technical expertise (AI + game dev)
 2026-07-16 | trends
+2026-07-17 | AI business impact
 
 ## Style rotation log (keep last 5)
-2026-07-15 | story→lesson→CTA
 2026-07-15 | before-after transformation (SKIPPED — publish blocked)
 2026-07-16 | data+insight
 2026-07-16 | educational deep-dive
 2026-07-16 | before-after transformation
+2026-07-17 | listicle
 
 ## Gig rotation log (keep last 5)
-2026-07-15 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-15 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets) (SKIPPED — publish blocked)
 2026-07-16 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-16 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-16 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
+2026-07-17 | AI images (create-ai-generated-images-with-professional-editing)
