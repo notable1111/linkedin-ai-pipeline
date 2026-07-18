@@ -55,31 +55,31 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-18 | NSFW FALSE-POSITIVE, 4/4 GENERATION ATTEMPTS (env): all 4 image attempts for a completely benign desk/document/blueprint concept were rejected with status "nsfw" — tried a literal desk+pen scene, a "safe for work" explicit-label variant, an abstract floating-card 3D-render variant, and a stripped-to-the-bone minimal prompt; all 4 rejected identically with zero images ever produced (no artifact to inspect, no wording pattern isolated as the trigger). Not charged in credits (balance unchanged pre/post). Treated as a systemic classifier issue, not a real content violation — fell back to TEXT-ONLY publish per the max-4-attempts rule (text had scored ≥9). If this repeats, next run should try a different model (not nano_banana_flash) before burning all 4 attempts, and log which model was used.
 
 ## Hook rotation log (keep last 8)
-2026-07-15 | how-to promise | "How to test your game idea in one week — before you spend money on art."
 2026-07-15 | mini-story opener | "I once shipped AI-generated code without reading it first. It broke a save system." (SKIPPED — publish blocked)
 2026-07-16 | shocking number | "I throw out about half of every AI image batch before a client ever sees it."
 2026-07-16 | behind-the-scenes | "Most clients never ask what \"source code included\" actually means."
 2026-07-16 | pain question | "Why does a rough browser demo get more real feedback than a polished trailer?"
 2026-07-17 | mini-story opener | "A client asked me why AI product images cost so much less than a photo shoot."
 2026-07-18 | how-to promise | "How to write a one-page game design doc before you hire any developer."
+2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
 
 ## Pillar rotation log (keep last 5)
-2026-07-16 | behind-the-scenes
 2026-07-16 | technical expertise (AI + game dev)
 2026-07-16 | trends
 2026-07-17 | AI business impact
 2026-07-18 | common mistakes
+2026-07-19 | technical expertise (AI + game dev)
 
 ## Style rotation log (keep last 5)
-2026-07-16 | data+insight
 2026-07-16 | educational deep-dive
 2026-07-16 | before-after transformation
 2026-07-17 | listicle
 2026-07-18 | story→lesson→CTA
+2026-07-19 | educational deep-dive
 
 ## Gig rotation log (keep last 5)
-2026-07-16 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-16 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-16 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-17 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-18 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
+2026-07-19 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
