@@ -62,24 +62,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-17 | mini-story opener | "A client asked me why AI product images cost so much less than a photo shoot."
 2026-07-18 | how-to promise | "How to write a one-page game design doc before you hire any developer."
 2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
+2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
 
 ## Pillar rotation log (keep last 5)
-2026-07-16 | technical expertise (AI + game dev)
 2026-07-16 | trends
 2026-07-17 | AI business impact
 2026-07-18 | common mistakes
 2026-07-19 | technical expertise (AI + game dev)
+2026-07-19 | behind-the-scenes
 
 ## Style rotation log (keep last 5)
-2026-07-16 | educational deep-dive
 2026-07-16 | before-after transformation
 2026-07-17 | listicle
 2026-07-18 | story→lesson→CTA
 2026-07-19 | educational deep-dive
+2026-07-19 | listicle
 
 ## Gig rotation log (keep last 5)
-2026-07-16 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-16 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-17 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-18 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-19 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
+2026-07-19 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
