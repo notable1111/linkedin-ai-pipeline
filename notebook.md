@@ -54,34 +54,34 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-17 | SPLIT-COMPOSITION IMBALANCE: a left/right "before vs after" split concept (traditional studio gear vs. glowing AI product) rendered the "old/traditional" side visibly busier and more detailed than the minimalist "new/AI" side — cost 1 point on image QC under style-lock consistency. Fix: for any split/comparison scene, explicitly instruct equal visual weight and matching level of geometric simplicity on both halves, not just matching color/lighting rules.
 - 2026-07-18 | NSFW FALSE-POSITIVE, 4/4 GENERATION ATTEMPTS (env): all 4 image attempts for a completely benign desk/document/blueprint concept were rejected with status "nsfw" — tried a literal desk+pen scene, a "safe for work" explicit-label variant, an abstract floating-card 3D-render variant, and a stripped-to-the-bone minimal prompt; all 4 rejected identically with zero images ever produced (no artifact to inspect, no wording pattern isolated as the trigger). Not charged in credits (balance unchanged pre/post). Treated as a systemic classifier issue, not a real content violation — fell back to TEXT-ONLY publish per the max-4-attempts rule (text had scored ≥9). If this repeats, next run should try a different model (not nano_banana_flash) before burning all 4 attempts, and log which model was used.
 - 2026-07-20 | ZAPIER TASK QUOTA EXHAUSTED (env, distinct from the 2026-07-15 tool-registration issue): a fully QC-approved text (9/10) and image (10/10) could not publish — the LinkedIn `share` action was present and correctly enabled (list_enabled_zapier_actions worked fine), but execute_zapier_write_action returned an explicit error: "insufficient tasks on account" (HTTP 402 Payment Required). This is a Zapier account-level task-quota limit, not a connector/auth/registration problem. NOT fixable from inside a session. FIX (owner side): add more tasks / upgrade the Zapier plan, or wait for the monthly task quota to reset, then re-check with list_enabled_zapier_actions before the next publish attempt. Pipeline rule confirmed: explicit error → stop-and-skip, never blind retry; the approved post survives in the log for the next run to publish (rewrite from scratch next time per the concept-is-fixed-per-run rule — do not carry over old copy across runs).
+- 2026-07-20 | ZAPIER ACTION ENABLED BUT EMPTY, AND ACTION KEY ≠ TOOL_NAME: a later same-day run found list_enabled_zapier_actions returning zero apps entirely (LinkedIn share not enabled at session start, unlike the quota-exhausted run above). Fix: discover_zapier_actions(app:"LinkedIn") → enable_zapier_action(selected_api:"LinkedInCLIAPI", action:"share") worked and auto-connected the existing account. Separately, calling execute_zapier_write_action with only action:"share" (no tool_name) failed with "Action 'share' not found" — the actual dispatch key is a distinct `tool_name` field (here `linkedin_create_share_update`) returned by list_enabled_zapier_actions, not the short action key. Always call list_enabled_zapier_actions right before publish and pass both `action` and `tool_name` from its output.
 
 ## Hook rotation log (keep last 8)
-2026-07-16 | shocking number | "I throw out about half of every AI image batch before a client ever sees it."
-2026-07-16 | behind-the-scenes | "Most clients never ask what \"source code included\" actually means."
 2026-07-16 | pain question | "Why does a rough browser demo get more real feedback than a polished trailer?"
 2026-07-17 | mini-story opener | "A client asked me why AI product images cost so much less than a photo shoot."
 2026-07-18 | how-to promise | "How to write a one-page game design doc before you hire any developer."
 2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
 2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
 2026-07-20 | pain question | "Why does the AI image you generated in January already look outdated?" (PUBLISH FAILED — Zapier quota)
+2026-07-20 | mini-story opener | "A client once asked me if a chatbot was even worth the cost."
 
 ## Pillar rotation log (keep last 5)
-2026-07-17 | AI business impact
 2026-07-18 | common mistakes
 2026-07-19 | technical expertise (AI + game dev)
 2026-07-19 | behind-the-scenes
 2026-07-20 | trends
+2026-07-20 | AI business impact
 
 ## Style rotation log (keep last 5)
-2026-07-17 | listicle
 2026-07-18 | story→lesson→CTA
 2026-07-19 | educational deep-dive
 2026-07-19 | listicle
 2026-07-20 | data+insight
+2026-07-20 | story→lesson→CTA
 
 ## Gig rotation log (keep last 5)
-2026-07-17 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-18 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-19 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-19 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-20 | AI images (create-ai-generated-images-with-professional-editing)
+2026-07-20 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
