@@ -56,11 +56,11 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-20 | ZAPIER TASK QUOTA EXHAUSTED (env, distinct from the 2026-07-15 tool-registration issue): a fully QC-approved text (9/10) and image (10/10) could not publish — the LinkedIn `share` action was present and correctly enabled (list_enabled_zapier_actions worked fine), but execute_zapier_write_action returned an explicit error: "insufficient tasks on account" (HTTP 402 Payment Required). This is a Zapier account-level task-quota limit, not a connector/auth/registration problem. NOT fixable from inside a session. FIX (owner side): add more tasks / upgrade the Zapier plan, or wait for the monthly task quota to reset, then re-check with list_enabled_zapier_actions before the next publish attempt. Pipeline rule confirmed: explicit error → stop-and-skip, never blind retry; the approved post survives in the log for the next run to publish (rewrite from scratch next time per the concept-is-fixed-per-run rule — do not carry over old copy across runs).
 - 2026-07-20 | ZAPIER ACTION ENABLED BUT EMPTY, AND ACTION KEY ≠ TOOL_NAME: a later same-day run found list_enabled_zapier_actions returning zero apps entirely (LinkedIn share not enabled at session start, unlike the quota-exhausted run above). Fix: discover_zapier_actions(app:"LinkedIn") → enable_zapier_action(selected_api:"LinkedInCLIAPI", action:"share") worked and auto-connected the existing account. Separately, calling execute_zapier_write_action with only action:"share" (no tool_name) failed with "Action 'share' not found" — the actual dispatch key is a distinct `tool_name` field (here `linkedin_create_share_update`) returned by list_enabled_zapier_actions, not the short action key. Always call list_enabled_zapier_actions right before publish and pass both `action` and `tool_name` from its output.
 - 2026-07-21 | LINKEDIN NO DEFAULT CONNECTION SET: the LinkedIn share action was enabled with tool_name resolved correctly and a valid, non-stale connection existed, but execute_zapier_write_action still failed immediately with "No default connection is set for LinkedIn" — this happens before the call ever reaches LinkedIn's API, so it carries zero duplicate-post risk and is not a "publish attempt" under the no-retry rule. Distinct from the 2026-07-15 tool-registration issue and the 2026-07-20 task-quota issue. Fix: list_zapier_connections(selected_api) to get the connection_id, then manage_zapier_connections(selected_api, default_connection_id) to set it as default, then proceed with the (first real) publish call. Going forward, call list_zapier_connections before the publish attempt and pre-set a default connection if none is set, instead of discovering the gap via a failed call.
-- 2026-07-22 | GENERIC CTA PHRASING: "before a single line of code gets written" (and similar stock phrases like "before you spend a dollar/hour") cost 1 point on text QC — not a cliché-blacklist hit, but noticeably more generic than the rest of the plain-spoken voice. Fix: when a CTA sentence starts feeling like boilerplate, rewrite it with a concrete verb tied to the actual topic instead of a general "before X happens" template.
+- 2026-07-22 | GENERIC BOILERPLATE SENTENCES: "before a single line of code gets written" (and similar stock phrases like "before you spend a dollar/hour") cost 1 point on text QC — not a cliché-blacklist hit, but noticeably more generic than the rest of the plain-spoken voice. Repeated 2026-07-23 on a non-CTA supporting line ("Most people try to automate their whole business at once. That's why most of it never gets built.") — same pattern, not confined to CTAs. Fix: whenever ANY sentence (CTA or supporting line) starts feeling like boilerplate, rewrite it with a concrete verb or detail tied to the actual topic instead of a general template phrase.
 - 2026-07-22 | ABSTRACT SHAPE READS AS ART, NOT GAME: an exploded-view abstract 3D geometric form (chosen to avoid the item-counting and split-composition failure modes) communicated "complexity/construction" but not unambiguously "this is a game asset" — cost 1 point on image QC under topic relevance. Fix: when using a non-literal/abstract visual metaphor for a game-dev topic, anchor it with at least one small recognizable game-dev cue (e.g. a controller silhouette, a simple character-like form, a level-grid line) rather than a fully abstract shape, while still avoiding literal counting/split scenes.
+- 2026-07-23 | TANGLED NETWORK/NODE SCENES: an abstract "glowing connected nodes forming a self-looping cycle" concept for an automation topic rendered as a visually busy tangle of many overlapping thin curves rather than a clean loop — cost 1 point on image QC under zero-artifacts, even though it read fine for topic relevance. Fix: when using a node/network visual metaphor, explicitly cap the prompt to a small number (3-5) of clean, non-overlapping lines/curves rather than leaving line count and density unconstrained.
 
 ## Hook rotation log (keep last 8)
-2026-07-17 | mini-story opener | "A client asked me why AI product images cost so much less than a photo shoot."
 2026-07-18 | how-to promise | "How to write a one-page game design doc before you hire any developer."
 2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
 2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
@@ -68,24 +68,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-20 | mini-story opener | "A client once asked me if a chatbot was even worth the cost."
 2026-07-21 | how-to promise | "How to pick the right size for your first game, so you actually finish it."
 2026-07-22 | shocking number | "A 3D version of the exact same simple game can cost about 3 times more to build than the 2D version."
+2026-07-23 | behind-the-scenes | "Here's the exact boring task I automated last month, step by step."
 
 ## Pillar rotation log (keep last 5)
-2026-07-19 | behind-the-scenes
 2026-07-20 | trends
 2026-07-20 | AI business impact
 2026-07-21 | common mistakes
 2026-07-22 | technical expertise (AI + game dev)
+2026-07-23 | AI business impact
 
 ## Style rotation log (keep last 5)
-2026-07-19 | listicle
 2026-07-20 | data+insight
 2026-07-20 | story→lesson→CTA
 2026-07-21 | before-after transformation
 2026-07-22 | listicle
+2026-07-23 | educational deep-dive
 
 ## Gig rotation log (keep last 5)
-2026-07-19 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-20 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-20 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-21 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-22 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
+2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
