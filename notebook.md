@@ -59,9 +59,9 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-22 | GENERIC BOILERPLATE SENTENCES: "before a single line of code gets written" (and similar stock phrases like "before you spend a dollar/hour") cost 1 point on text QC — not a cliché-blacklist hit, but noticeably more generic than the rest of the plain-spoken voice. Repeated 2026-07-23 on a non-CTA supporting line ("Most people try to automate their whole business at once. That's why most of it never gets built.") — same pattern, not confined to CTAs. Fix: whenever ANY sentence (CTA or supporting line) starts feeling like boilerplate, rewrite it with a concrete verb or detail tied to the actual topic instead of a general template phrase.
 - 2026-07-22 | ABSTRACT SHAPE READS AS ART, NOT GAME: an exploded-view abstract 3D geometric form (chosen to avoid the item-counting and split-composition failure modes) communicated "complexity/construction" but not unambiguously "this is a game asset" — cost 1 point on image QC under topic relevance. Fix: when using a non-literal/abstract visual metaphor for a game-dev topic, anchor it with at least one small recognizable game-dev cue (e.g. a controller silhouette, a simple character-like form, a level-grid line) rather than a fully abstract shape, while still avoiding literal counting/split scenes.
 - 2026-07-23 | TANGLED NETWORK/NODE SCENES: an abstract "glowing connected nodes forming a self-looping cycle" concept for an automation topic rendered as a visually busy tangle of many overlapping thin curves rather than a clean loop — cost 1 point on image QC under zero-artifacts, even though it read fine for topic relevance. Fix: when using a node/network visual metaphor, explicitly cap the prompt to a small number (3-5) of clean, non-overlapping lines/curves rather than leaving line count and density unconstrained.
+- 2026-07-24 | GARBLED IN-SCENE PROP UI TEXT: a workspace-monitor scene (gray-box level on screen, controller on desk) rendered a small illegible scribble-like "toolbar/label" UI element in the corner of the on-screen editor mockup — not the overlay text, but a secondary in-scene prop text the prompt never asked for. Cost 1 point on image QC under zero-artifacts (9/10), invisible at thumbnail size but visible on zoom. Fix: when a scene includes any screen/monitor/document prop, explicitly instruct "no UI text, labels, icons, or toolbar elements of any kind on the screen — plain shapes/geometry only" rather than assuming an unlabeled mockup won't invent its own micro-text.
 
 ## Hook rotation log (keep last 8)
-2026-07-18 | how-to promise | "How to write a one-page game design doc before you hire any developer."
 2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
 2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
 2026-07-20 | pain question | "Why does the AI image you generated in January already look outdated?" (PUBLISH FAILED — Zapier quota)
@@ -69,24 +69,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-21 | how-to promise | "How to pick the right size for your first game, so you actually finish it."
 2026-07-22 | shocking number | "A 3D version of the exact same simple game can cost about 3 times more to build than the 2D version."
 2026-07-23 | behind-the-scenes | "Here's the exact boring task I automated last month, step by step."
+2026-07-24 | pain question | "Why does a $20 prototype gig sound like the cheap option?"
 
 ## Pillar rotation log (keep last 5)
-2026-07-20 | trends
 2026-07-20 | AI business impact
 2026-07-21 | common mistakes
 2026-07-22 | technical expertise (AI + game dev)
 2026-07-23 | AI business impact
+2026-07-24 | behind-the-scenes
 
 ## Style rotation log (keep last 5)
-2026-07-20 | data+insight
 2026-07-20 | story→lesson→CTA
 2026-07-21 | before-after transformation
 2026-07-22 | listicle
 2026-07-23 | educational deep-dive
+2026-07-24 | story→lesson→CTA
 
 ## Gig rotation log (keep last 5)
-2026-07-20 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-20 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-21 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-22 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
+2026-07-24 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
