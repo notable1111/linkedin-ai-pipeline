@@ -24,7 +24,7 @@ story→lesson→CTA / listicle / educational deep-dive / before-after transform
 2. Technical expertise — Unity vs UE5 for a first game; why prototypes should be ugly; C# patterns that survive production; AI image workflows for game assets; 2D vs 3D cost reality; what "source code included" really means for a client.
 3. Common mistakes — hiring a dev without a game design doc; "just add AI" requests; over-scoping a first game; buying assets before mechanics work; trusting AI output without QC.
 4. Behind-the-scenes — how a $20 prototype gig actually works; my QC process for AI-generated images; a week split between client work and own projects; the tools on my desk this month.
-5. Trends — AI inside game pipelines; what changed in AI image models this year; freelance market shifts; browser games as a distribution channel.
+5. Trends — AI inside game pipelines; what changed in AI image models this year; freelance market shifts; browser games as a distribution channel; [2026-07-25] clients now default to asking for AI built into every request instead of AI as an add-on, and what that does to scope and price.
 
 ## Gig-link map (match the topic; never the same gig twice in a row when avoidable)
 - Unity / C# / 3D game topics → https://www.fiverr.com/notableuzb/develop-games-in-unity-with-c-sharp-and-3d-assets
@@ -60,9 +60,10 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-22 | ABSTRACT SHAPE READS AS ART, NOT GAME: an exploded-view abstract 3D geometric form (chosen to avoid the item-counting and split-composition failure modes) communicated "complexity/construction" but not unambiguously "this is a game asset" — cost 1 point on image QC under topic relevance. Fix: when using a non-literal/abstract visual metaphor for a game-dev topic, anchor it with at least one small recognizable game-dev cue (e.g. a controller silhouette, a simple character-like form, a level-grid line) rather than a fully abstract shape, while still avoiding literal counting/split scenes.
 - 2026-07-23 | TANGLED NETWORK/NODE SCENES: an abstract "glowing connected nodes forming a self-looping cycle" concept for an automation topic rendered as a visually busy tangle of many overlapping thin curves rather than a clean loop — cost 1 point on image QC under zero-artifacts, even though it read fine for topic relevance. Fix: when using a node/network visual metaphor, explicitly cap the prompt to a small number (3-5) of clean, non-overlapping lines/curves rather than leaving line count and density unconstrained.
 - 2026-07-24 | GARBLED IN-SCENE PROP UI TEXT: a workspace-monitor scene (gray-box level on screen, controller on desk) rendered a small illegible scribble-like "toolbar/label" UI element in the corner of the on-screen editor mockup — not the overlay text, but a secondary in-scene prop text the prompt never asked for. Cost 1 point on image QC under zero-artifacts (9/10), invisible at thumbnail size but visible on zoom. Fix: when a scene includes any screen/monitor/document prop, explicitly instruct "no UI text, labels, icons, or toolbar elements of any kind on the screen — plain shapes/geometry only" rather than assuming an unlabeled mockup won't invent its own micro-text.
+- 2026-07-25 | EXACT DECORATIVE-ELEMENT COUNT NOT FOLLOWED: a prompt asked for "exactly 3" glowing connector lines radiating from a central icon; the model rendered 4, and one line crossed through the frame's border instead of emerging cleanly from inside it. Cost 1 point on image QC under zero-artifacts (9/10), even though the visual still read as clean and non-tangled. Same root cause as the 2026-07-16 numeric-claim mismatch lesson — the model does not reliably honor exact counts in a prompt, whether the count is a visible claim or just decorative — so treat any "exactly N" element instruction as a soft target, not a guarantee, and re-count during image QC every time a prompt specifies a number.
+- 2026-07-25 | LONG EXPLANATORY LINES DILUTE THE SIGNATURE RHYTHM: a body line that packed a full clause plus an em-dash aside ("Adding AI is not free. It adds scope, testing, and new decisions — like what happens when the AI gets it wrong.") read noticeably denser than the short, punchy line rhythm in style-samples.md. Cost 1 point on text QC under voice/rhythm (9/10) even with zero cliché or truth issues. Fix: when a body line starts running past one clean clause, split it into two short standalone lines instead of joining with a comma or em-dash aside.
 
 ## Hook rotation log (keep last 8)
-2026-07-19 | shocking number | "I built the same simple game in Unity and in UE5. One took 3 days. The other took 9."
 2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
 2026-07-20 | pain question | "Why does the AI image you generated in January already look outdated?" (PUBLISH FAILED — Zapier quota)
 2026-07-20 | mini-story opener | "A client once asked me if a chatbot was even worth the cost."
@@ -70,24 +71,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-22 | shocking number | "A 3D version of the exact same simple game can cost about 3 times more to build than the 2D version."
 2026-07-23 | behind-the-scenes | "Here's the exact boring task I automated last month, step by step."
 2026-07-24 | pain question | "Why does a $20 prototype gig sound like the cheap option?"
+2026-07-25 | mini-story opener | "A client came to me last month asking for a simple booking app. Fifteen minutes into the call, she asked if it could 'do the AI thing too.'"
 
 ## Pillar rotation log (keep last 5)
-2026-07-20 | AI business impact
 2026-07-21 | common mistakes
 2026-07-22 | technical expertise (AI + game dev)
 2026-07-23 | AI business impact
 2026-07-24 | behind-the-scenes
+2026-07-25 | trends
 
 ## Style rotation log (keep last 5)
-2026-07-20 | story→lesson→CTA
 2026-07-21 | before-after transformation
 2026-07-22 | listicle
 2026-07-23 | educational deep-dive
 2026-07-24 | story→lesson→CTA
+2026-07-25 | data+insight
 
 ## Gig rotation log (keep last 5)
-2026-07-20 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-21 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-22 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-24 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
+2026-07-25 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
