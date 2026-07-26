@@ -62,34 +62,34 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-24 | GARBLED IN-SCENE PROP UI TEXT: a workspace-monitor scene (gray-box level on screen, controller on desk) rendered a small illegible scribble-like "toolbar/label" UI element in the corner of the on-screen editor mockup — not the overlay text, but a secondary in-scene prop text the prompt never asked for. Cost 1 point on image QC under zero-artifacts (9/10), invisible at thumbnail size but visible on zoom. Fix: when a scene includes any screen/monitor/document prop, explicitly instruct "no UI text, labels, icons, or toolbar elements of any kind on the screen — plain shapes/geometry only" rather than assuming an unlabeled mockup won't invent its own micro-text.
 - 2026-07-25 | EXACT DECORATIVE-ELEMENT COUNT NOT FOLLOWED: a prompt asked for "exactly 3" glowing connector lines radiating from a central icon; the model rendered 4, and one line crossed through the frame's border instead of emerging cleanly from inside it. Cost 1 point on image QC under zero-artifacts (9/10), even though the visual still read as clean and non-tangled. Same root cause as the 2026-07-16 numeric-claim mismatch lesson — the model does not reliably honor exact counts in a prompt, whether the count is a visible claim or just decorative — so treat any "exactly N" element instruction as a soft target, not a guarantee, and re-count during image QC every time a prompt specifies a number.
 - 2026-07-25 | LONG EXPLANATORY LINES DILUTE THE SIGNATURE RHYTHM: a body line that packed a full clause plus an em-dash aside ("Adding AI is not free. It adds scope, testing, and new decisions — like what happens when the AI gets it wrong.") read noticeably denser than the short, punchy line rhythm in style-samples.md. Cost 1 point on text QC under voice/rhythm (9/10) even with zero cliché or truth issues. Fix: when a body line starts running past one clean clause, split it into two short standalone lines instead of joining with a comma or em-dash aside.
+- 2026-07-26 | SECONDARY PROP DETAIL READS AS A LETTER: a small closed crate prop (used as the "assets" side of a mechanic-vs-assets scene) had a standard diagonal wooden cross-brace that, on zoom, was ambiguous enough to resemble a stray letter mark. Not a real defect (no actual text/logo), but cost 1 point on image QC under zero-artifacts on the side of hostile caution. Same family as the 2026-07-24 garbled-prop-text lesson — any secondary prop with linear/diagonal surface detail (crate slats, panel seams, cable runs) should be explicitly kept plain in the prompt ("no diagonal bracing, seams, or surface lines that could resemble letters") whenever it sits near the overlay text or gets non-trivial screen size.
 
 ## Hook rotation log (keep last 8)
-2026-07-19 | behind-the-scenes | "Here's what's actually open on my laptop on a normal work day."
-2026-07-20 | pain question | "Why does the AI image you generated in January already look outdated?" (PUBLISH FAILED — Zapier quota)
 2026-07-20 | mini-story opener | "A client once asked me if a chatbot was even worth the cost."
 2026-07-21 | how-to promise | "How to pick the right size for your first game, so you actually finish it."
 2026-07-22 | shocking number | "A 3D version of the exact same simple game can cost about 3 times more to build than the 2D version."
 2026-07-23 | behind-the-scenes | "Here's the exact boring task I automated last month, step by step."
 2026-07-24 | pain question | "Why does a $20 prototype gig sound like the cheap option?"
 2026-07-25 | mini-story opener | "A client came to me last month asking for a simple booking app. Fifteen minutes into the call, she asked if it could 'do the AI thing too.'"
+2026-07-26 | how-to promise | "How to tell if your mechanic is fun before you buy a single game asset."
 
 ## Pillar rotation log (keep last 5)
-2026-07-21 | common mistakes
 2026-07-22 | technical expertise (AI + game dev)
 2026-07-23 | AI business impact
 2026-07-24 | behind-the-scenes
 2026-07-25 | trends
+2026-07-26 | common mistakes
 
 ## Style rotation log (keep last 5)
-2026-07-21 | before-after transformation
 2026-07-22 | listicle
 2026-07-23 | educational deep-dive
 2026-07-24 | story→lesson→CTA
 2026-07-25 | data+insight
+2026-07-26 | before-after transformation
 
 ## Gig rotation log (keep last 5)
-2026-07-21 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-22 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-24 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-25 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
+2026-07-26 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
