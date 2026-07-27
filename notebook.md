@@ -58,7 +58,7 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-21 | LINKEDIN NO DEFAULT CONNECTION SET: the LinkedIn share action was enabled with tool_name resolved correctly and a valid, non-stale connection existed, but execute_zapier_write_action still failed immediately with "No default connection is set for LinkedIn" — this happens before the call ever reaches LinkedIn's API, so it carries zero duplicate-post risk and is not a "publish attempt" under the no-retry rule. Distinct from the 2026-07-15 tool-registration issue and the 2026-07-20 task-quota issue. Fix: list_zapier_connections(selected_api) to get the connection_id, then manage_zapier_connections(selected_api, default_connection_id) to set it as default, then proceed with the (first real) publish call. Going forward, call list_zapier_connections before the publish attempt and pre-set a default connection if none is set, instead of discovering the gap via a failed call.
 - 2026-07-22 | GENERIC BOILERPLATE SENTENCES: "before a single line of code gets written" (and similar stock phrases like "before you spend a dollar/hour") cost 1 point on text QC — not a cliché-blacklist hit, but noticeably more generic than the rest of the plain-spoken voice. Repeated 2026-07-23 on a non-CTA supporting line ("Most people try to automate their whole business at once. That's why most of it never gets built.") — same pattern, not confined to CTAs. Fix: whenever ANY sentence (CTA or supporting line) starts feeling like boilerplate, rewrite it with a concrete verb or detail tied to the actual topic instead of a general template phrase.
 - 2026-07-22 | ABSTRACT SHAPE READS AS ART, NOT GAME: an exploded-view abstract 3D geometric form (chosen to avoid the item-counting and split-composition failure modes) communicated "complexity/construction" but not unambiguously "this is a game asset" — cost 1 point on image QC under topic relevance. Fix: when using a non-literal/abstract visual metaphor for a game-dev topic, anchor it with at least one small recognizable game-dev cue (e.g. a controller silhouette, a simple character-like form, a level-grid line) rather than a fully abstract shape, while still avoiding literal counting/split scenes.
-- 2026-07-23 | TANGLED NETWORK/NODE SCENES: an abstract "glowing connected nodes forming a self-looping cycle" concept for an automation topic rendered as a visually busy tangle of many overlapping thin curves rather than a clean loop — cost 1 point on image QC under zero-artifacts, even though it read fine for topic relevance. Fix: when using a node/network visual metaphor, explicitly cap the prompt to a small number (3-5) of clean, non-overlapping lines/curves rather than leaving line count and density unconstrained.
+- 2026-07-23 | TANGLED NETWORK/NODE SCENES: an abstract "glowing connected nodes forming a self-looping cycle" concept for an automation topic rendered as a visually busy tangle of many overlapping thin curves rather than a clean loop — cost 1 point on image QC under zero-artifacts, even though it read fine for topic relevance. Fix: when using a node/network visual metaphor, explicitly cap the prompt to a small number (3-5) of clean, non-overlapping lines/curves rather than leaving line count and density unconstrained. [Strengthened 2026-07-27]: same pattern recurs with any multi-element background/variant scene, not just node/network metaphors — a "final asset + several faded sketch/draft variants" concept rendered the background variants overlapping each other's outlines into a slightly busy cluster, costing 1 point on zero-artifacts again. Fix generalizes: whenever a prompt includes multiple repeated background elements (nodes, lines, sketch variants, decorative shapes), explicitly instruct clear spacing / no overlap between each instance, not just a capped count.
 - 2026-07-24 | GARBLED IN-SCENE PROP UI TEXT: a workspace-monitor scene (gray-box level on screen, controller on desk) rendered a small illegible scribble-like "toolbar/label" UI element in the corner of the on-screen editor mockup — not the overlay text, but a secondary in-scene prop text the prompt never asked for. Cost 1 point on image QC under zero-artifacts (9/10), invisible at thumbnail size but visible on zoom. Fix: when a scene includes any screen/monitor/document prop, explicitly instruct "no UI text, labels, icons, or toolbar elements of any kind on the screen — plain shapes/geometry only" rather than assuming an unlabeled mockup won't invent its own micro-text.
 - 2026-07-25 | EXACT DECORATIVE-ELEMENT COUNT NOT FOLLOWED: a prompt asked for "exactly 3" glowing connector lines radiating from a central icon; the model rendered 4, and one line crossed through the frame's border instead of emerging cleanly from inside it. Cost 1 point on image QC under zero-artifacts (9/10), even though the visual still read as clean and non-tangled. Same root cause as the 2026-07-16 numeric-claim mismatch lesson — the model does not reliably honor exact counts in a prompt, whether the count is a visible claim or just decorative — so treat any "exactly N" element instruction as a soft target, not a guarantee, and re-count during image QC every time a prompt specifies a number.
 - 2026-07-25 | LONG EXPLANATORY LINES DILUTE THE SIGNATURE RHYTHM: a body line that packed a full clause plus an em-dash aside ("Adding AI is not free. It adds scope, testing, and new decisions — like what happens when the AI gets it wrong.") read noticeably denser than the short, punchy line rhythm in style-samples.md. Cost 1 point on text QC under voice/rhythm (9/10) even with zero cliché or truth issues. Fix: when a body line starts running past one clean clause, split it into two short standalone lines instead of joining with a comma or em-dash aside.
@@ -72,24 +72,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-24 | pain question | "Why does a $20 prototype gig sound like the cheap option?"
 2026-07-25 | mini-story opener | "A client came to me last month asking for a simple booking app. Fifteen minutes into the call, she asked if it could 'do the AI thing too.'"
 2026-07-26 | how-to promise | "How to tell if your mechanic is fun before you buy a single game asset."
+2026-07-27 09:04 | shocking number | "I generate 15 to 20 throwaway AI concept images before a single game asset gets modeled."
 
 ## Pillar rotation log (keep last 5)
-2026-07-22 | technical expertise (AI + game dev)
 2026-07-23 | AI business impact
 2026-07-24 | behind-the-scenes
 2026-07-25 | trends
 2026-07-26 | common mistakes
+2026-07-27 09:04 | technical expertise (AI + game dev)
 
 ## Style rotation log (keep last 5)
-2026-07-22 | listicle
 2026-07-23 | educational deep-dive
 2026-07-24 | story→lesson→CTA
 2026-07-25 | data+insight
 2026-07-26 | before-after transformation
+2026-07-27 09:04 | story→lesson→CTA
 
 ## Gig rotation log (keep last 5)
-2026-07-22 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-24 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-25 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-26 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
+2026-07-27 09:04 | AI images (create-ai-generated-images-with-professional-editing)
