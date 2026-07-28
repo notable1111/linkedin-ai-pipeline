@@ -63,9 +63,9 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-25 | EXACT DECORATIVE-ELEMENT COUNT NOT FOLLOWED: a prompt asked for "exactly 3" glowing connector lines radiating from a central icon; the model rendered 4, and one line crossed through the frame's border instead of emerging cleanly from inside it. Cost 1 point on image QC under zero-artifacts (9/10), even though the visual still read as clean and non-tangled. Same root cause as the 2026-07-16 numeric-claim mismatch lesson — the model does not reliably honor exact counts in a prompt, whether the count is a visible claim or just decorative — so treat any "exactly N" element instruction as a soft target, not a guarantee, and re-count during image QC every time a prompt specifies a number.
 - 2026-07-25 | LONG EXPLANATORY LINES DILUTE THE SIGNATURE RHYTHM: a body line that packed a full clause plus an em-dash aside ("Adding AI is not free. It adds scope, testing, and new decisions — like what happens when the AI gets it wrong.") read noticeably denser than the short, punchy line rhythm in style-samples.md. Cost 1 point on text QC under voice/rhythm (9/10) even with zero cliché or truth issues. Fix: when a body line starts running past one clean clause, split it into two short standalone lines instead of joining with a comma or em-dash aside.
 - 2026-07-26 | SECONDARY PROP DETAIL READS AS A LETTER: a small closed crate prop (used as the "assets" side of a mechanic-vs-assets scene) had a standard diagonal wooden cross-brace that, on zoom, was ambiguous enough to resemble a stray letter mark. Not a real defect (no actual text/logo), but cost 1 point on image QC under zero-artifacts on the side of hostile caution. Same family as the 2026-07-24 garbled-prop-text lesson — any secondary prop with linear/diagonal surface detail (crate slats, panel seams, cable runs) should be explicitly kept plain in the prompt ("no diagonal bracing, seams, or surface lines that could resemble letters") whenever it sits near the overlay text or gets non-trivial screen size.
+- 2026-07-28 | MAIN SUBJECT OVERLAPS THE OVERLAY TEXT: a centered hourglass scene (topic: honest breakdown of the "10 hours a week" automation claim) was prompted to sit in the center with the overlay in the "upper or left third," but the model rendered the hourglass tall enough that its top bulb physically overlapped and cut into the bottom stroke of a letter in the second overlay line ("HOURS"). Spelling was still technically correct and legible, but cost 1 point each on thumbnail readability and zero-artifacts (8/10). Distinct from the prior prop-detail lessons (2026-07-24, 2026-07-26) — this is the main subject's silhouette, not a secondary prop's surface texture, encroaching into the text safe zone. Fix: when a scene's main subject is vertically tall/centered, explicitly cap its height in the prompt (e.g. "the subject occupies only the lower two-thirds of the frame, with a clear gap below the overlay text — nothing overlaps or touches the overlay text") rather than relying on "upper or left third" positioning alone to keep the two apart.
 
 ## Hook rotation log (keep last 8)
-2026-07-20 | mini-story opener | "A client once asked me if a chatbot was even worth the cost."
 2026-07-21 | how-to promise | "How to pick the right size for your first game, so you actually finish it."
 2026-07-22 | shocking number | "A 3D version of the exact same simple game can cost about 3 times more to build than the 2D version."
 2026-07-23 | behind-the-scenes | "Here's the exact boring task I automated last month, step by step."
@@ -73,24 +73,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-25 | mini-story opener | "A client came to me last month asking for a simple booking app. Fifteen minutes into the call, she asked if it could 'do the AI thing too.'"
 2026-07-26 | how-to promise | "How to tell if your mechanic is fun before you buy a single game asset."
 2026-07-27 09:04 | shocking number | "I generate 15 to 20 throwaway AI concept images before a single game asset gets modeled."
+2026-07-28 09:03 | behind-the-scenes | "Here's what I actually track when someone says automation saves \"10 hours a week.\""
 
 ## Pillar rotation log (keep last 5)
-2026-07-23 | AI business impact
 2026-07-24 | behind-the-scenes
 2026-07-25 | trends
 2026-07-26 | common mistakes
 2026-07-27 09:04 | technical expertise (AI + game dev)
+2026-07-28 09:03 | AI business impact
 
 ## Style rotation log (keep last 5)
-2026-07-23 | educational deep-dive
 2026-07-24 | story→lesson→CTA
 2026-07-25 | data+insight
 2026-07-26 | before-after transformation
 2026-07-27 09:04 | story→lesson→CTA
+2026-07-28 09:03 | listicle
 
 ## Gig rotation log (keep last 5)
-2026-07-23 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-24 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-25 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-26 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-07-27 09:04 | AI images (create-ai-generated-images-with-professional-editing)
+2026-07-28 09:03 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
