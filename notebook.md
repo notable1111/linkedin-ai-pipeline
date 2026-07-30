@@ -42,6 +42,7 @@ Deep navy / near-black base. ONE accent color per image (electric blue OR neon o
 Extend the topic catalog only when a run genuinely needs it: max 1–2 additions, dated, inside the existing pillars.
 
 ## Lessons
+- 2026-07-30 | BALANCE THRESHOLD OVERRIDE (owner instruction): the Step 0.1 skip-run floor is lowered from 15 credits to 5 credits. Compare starting Higgsfield balance to 5, not 15, before deciding to skip a run for low balance.
 - 2026-07-15 | META-LEAK: a live post included the draft's meta-commentary ("For a stronger call-to-action, you can end with:"). Zero-tolerance gate at text QC and again on the final caption string before publish.
 - 2026-07-15 | HASHTAGS: 10–14 hashtags on past posts coincided with 23–130 impressions; hard cap 3–5 niche tags.
 - 2026-07-15 | DENSE INFOGRAPHICS: multi-word AI-generated infographics produce spelling artifacts; default to ≤4-word hero overlays. Infographic format only as a rare exception with letter-by-letter QC of EVERY word.
