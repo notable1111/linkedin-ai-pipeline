@@ -42,6 +42,7 @@ Deep navy / near-black base. ONE accent color per image (electric blue OR neon o
 Extend the topic catalog only when a run genuinely needs it: max 1–2 additions, dated, inside the existing pillars.
 
 ## Lessons
+- 2026-07-30 | NO HIGGSFIELD TOKEN → TEXT-ONLY, DON'T SKIP (owner instruction): if Higgsfield is unavailable at Step 0.1 or Step 4 — no token, connector not connected/disconnected, auth failure, or the balance call itself errors out (distinct from a low-but-present balance, which still uses the 5-credit floor above) — do not skip the whole run for that reason alone. Fall back to a TEXT-ONLY run: still do Step 0 memory reads, Step 1 concept, Step 2 writing, and Step 3 text QC as normal, skip Step 4/5 image generation entirely, and publish text-only at Step 6 (same as the existing "no attempt reaches 8/10" text-only fallback) provided the text scores ≥9. Still log the run and note in post-log.md that image generation was skipped for missing Higgsfield access, not attempted and failed.
 - 2026-07-30 | BALANCE THRESHOLD OVERRIDE (owner instruction): the Step 0.1 skip-run floor is lowered from 15 credits to 5 credits. Compare starting Higgsfield balance to 5, not 15, before deciding to skip a run for low balance.
 - 2026-07-15 | META-LEAK: a live post included the draft's meta-commentary ("For a stronger call-to-action, you can end with:"). Zero-tolerance gate at text QC and again on the final caption string before publish.
 - 2026-07-15 | HASHTAGS: 10–14 hashtags on past posts coincided with 23–130 impressions; hard cap 3–5 niche tags.
