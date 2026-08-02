@@ -22,7 +22,7 @@ story→lesson→CTA / listicle / educational deep-dive / before-after transform
 ## Topic catalog (pillar → seed topics)
 1. AI business impact — what AI automation actually saves (honest breakdown of the 10-hours/week claim); when NOT to automate; AI product images vs photographer costs; chatbots that pay for themselves; automating one boring workflow end-to-end.
 2. Technical expertise — Unity vs UE5 for a first game; why prototypes should be ugly; C# patterns that survive production; AI image workflows for game assets; 2D vs 3D cost reality; what "source code included" really means for a client.
-3. Common mistakes — hiring a dev without a game design doc; "just add AI" requests; over-scoping a first game; buying assets before mechanics work; trusting AI output without QC.
+3. Common mistakes — hiring a dev without a game design doc; "just add AI" requests; over-scoping a first game; buying assets before mechanics work; trusting AI output without QC; [2026-08-02] quoting fixed-price AI features without planning for the AI provider itself changing mid-project (pricing shifts, rate limits, model deprecation).
 4. Behind-the-scenes — how a $20 prototype gig actually works; my QC process for AI-generated images; a week split between client work and own projects; the tools on my desk this month.
 5. Trends — AI inside game pipelines; what changed in AI image models this year; freelance market shifts; browser games as a distribution channel; [2026-07-25] clients now default to asking for AI built into every request instead of AI as an add-on, and what that does to scope and price.
 
@@ -66,9 +66,9 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-25 | LONG EXPLANATORY LINES DILUTE THE SIGNATURE RHYTHM: a body line that packed a full clause plus an em-dash aside ("Adding AI is not free. It adds scope, testing, and new decisions — like what happens when the AI gets it wrong.") read noticeably denser than the short, punchy line rhythm in style-samples.md. Cost 1 point on text QC under voice/rhythm (9/10) even with zero cliché or truth issues. Fix: when a body line starts running past one clean clause, split it into two short standalone lines instead of joining with a comma or em-dash aside.
 - 2026-07-26 | SECONDARY PROP DETAIL READS AS A LETTER: a small closed crate prop (used as the "assets" side of a mechanic-vs-assets scene) had a standard diagonal wooden cross-brace that, on zoom, was ambiguous enough to resemble a stray letter mark. Not a real defect (no actual text/logo), but cost 1 point on image QC under zero-artifacts on the side of hostile caution. Same family as the 2026-07-24 garbled-prop-text lesson — any secondary prop with linear/diagonal surface detail (crate slats, panel seams, cable runs) should be explicitly kept plain in the prompt ("no diagonal bracing, seams, or surface lines that could resemble letters") whenever it sits near the overlay text or gets non-trivial screen size.
 - 2026-07-28 | MAIN SUBJECT OVERLAPS THE OVERLAY TEXT: a centered hourglass scene (topic: honest breakdown of the "10 hours a week" automation claim) was prompted to sit in the center with the overlay in the "upper or left third," but the model rendered the hourglass tall enough that its top bulb physically overlapped and cut into the bottom stroke of a letter in the second overlay line ("HOURS"). Spelling was still technically correct and legible, but cost 1 point each on thumbnail readability and zero-artifacts (8/10). Distinct from the prior prop-detail lessons (2026-07-24, 2026-07-26) — this is the main subject's silhouette, not a secondary prop's surface texture, encroaching into the text safe zone. Fix: when a scene's main subject is vertically tall/centered, explicitly cap its height in the prompt (e.g. "the subject occupies only the lower two-thirds of the frame, with a clear gap below the overlay text — nothing overlaps or touches the overlay text") rather than relying on "upper or left third" positioning alone to keep the two apart.
+- 2026-08-02 | OVERLAY WORD DUPLICATION: a 3-word/4-token overlay ("3 APIS, ZERO WARNING") rendered with "ZERO" duplicated ("3 APIS, ZERO ZERO WARNING") on the first generation attempt — an automatic spelling-gate FAIL, distinct from the 2026-07-15 trailing-mark artifact (that was a stray symbol, this was a whole extra word). Not caused by an exact-count claim (the 2026-07-16/07-25 numeric-mismatch lessons don't apply here — nothing in the scene was being counted). Fix that worked: rewrite the overlay-text prompt line to explicitly enumerate each word/line as a separate labeled item ("line 1 = ..., line 2 = ..., line 3 = ..."), state the word count, and add an explicit "do not repeat any word" instruction — regeneration with this stricter phrasing produced the correct text on the next attempt. Continue to spell out and letter-by-letter verify every overlay on every attempt, even short ones — short overlays are not immune to duplication.
 
 ## Hook rotation log (keep last 8)
-2026-07-24 | pain question | "Why does a $20 prototype gig sound like the cheap option?"
 2026-07-25 | mini-story opener | "A client came to me last month asking for a simple booking app. Fifteen minutes into the call, she asked if it could 'do the AI thing too.'"
 2026-07-26 | how-to promise | "How to tell if your mechanic is fun before you buy a single game asset."
 2026-07-27 09:04 | shocking number | "I generate 15 to 20 throwaway AI concept images before a single game asset gets modeled."
@@ -76,24 +76,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-07-30 14:55 | pain question | "Why do so many freelance developers who build prototypes for clients never finish one of their own?"
 2026-07-31 09:05 | mini-story opener | "A client's Unity project had six scripts all named some version of \"GameManager.\""
 2026-08-01 09:02 | how-to promise | "How to tell if AI actually sped up your concept-art phase, or just moved the slow part somewhere else."
+2026-08-02 09:07 | shocking number | "3 different AI APIs have changed their pricing or shut down a model on me mid-project this year."
 
 ## Pillar rotation log (keep last 5)
-2026-07-27 09:04 | technical expertise (AI + game dev)
 2026-07-28 09:03 | AI business impact
 2026-07-30 14:55 | behind-the-scenes
 2026-07-31 09:05 | technical expertise (AI + game dev)
 2026-08-01 09:02 | trends
+2026-08-02 09:07 | common mistakes
 
 ## Style rotation log (keep last 5)
-2026-07-27 09:04 | story→lesson→CTA
 2026-07-28 09:03 | listicle
 2026-07-30 14:55 | data+insight
 2026-07-31 09:05 | story→lesson→CTA
 2026-08-01 09:02 | educational deep-dive
+2026-08-02 09:07 | before-after transformation
 
 ## Gig rotation log (keep last 5)
-2026-07-27 09:04 | AI images (create-ai-generated-images-with-professional-editing)
 2026-07-28 09:03 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-07-30 14:55 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-31 09:05 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-08-01 09:02 | AI images (create-ai-generated-images-with-professional-editing)
+2026-08-02 09:07 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
