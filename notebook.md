@@ -23,7 +23,7 @@ story→lesson→CTA / listicle / educational deep-dive / before-after transform
 1. AI business impact — what AI automation actually saves (honest breakdown of the 10-hours/week claim); when NOT to automate; AI product images vs photographer costs; chatbots that pay for themselves; automating one boring workflow end-to-end; [2026-08-03] what to check 90 days after delivering an automation, to confirm it's still running and actually saving time.
 2. Technical expertise — Unity vs UE5 for a first game; why prototypes should be ugly; C# patterns that survive production; AI image workflows for game assets; 2D vs 3D cost reality; what "source code included" really means for a client.
 3. Common mistakes — hiring a dev without a game design doc; "just add AI" requests; over-scoping a first game; buying assets before mechanics work; trusting AI output without QC; [2026-08-02] quoting fixed-price AI features without planning for the AI provider itself changing mid-project (pricing shifts, rate limits, model deprecation).
-4. Behind-the-scenes — how a $20 prototype gig actually works; my QC process for AI-generated images; a week split between client work and own projects; the tools on my desk this month.
+4. Behind-the-scenes — how a $20 prototype gig actually works; my QC process for AI-generated images; a week split between client work and own projects; the tools on my desk this month; [2026-08-12] the first message sent to every new client before any building starts, and what it asks.
 5. Trends — AI inside game pipelines; what changed in AI image models this year; freelance market shifts; browser games as a distribution channel; [2026-07-25] clients now default to asking for AI built into every request instead of AI as an add-on, and what that does to scope and price.
 
 ## Gig-link map (match the topic; never the same gig twice in a row when avoidable)
@@ -42,6 +42,7 @@ Deep navy / near-black base. ONE accent color per image (electric blue OR neon o
 Extend the topic catalog only when a run genuinely needs it: max 1–2 additions, dated, inside the existing pillars.
 
 ## Lessons
+- 2026-08-12 | LOW/INSUFFICIENT CREDITS → TEXT-ONLY, DON'T SKIP THE WHOLE RUN (owner instruction, given live in-session, verified — distinct from the unverified 2026-07-30 self-lesson flagged by the 2026-08-04 entry below): the owner directly confirmed the rule live: if Higgsfield credits are low or run out mid-attempt so the photo can't be made, don't skip the run — publish the post as text-only instead. This extends the existing "no Higgsfield access → text-only" fallback (next lesson below) to cover a present-but-low/exhausted balance too, not just a missing token or auth failure. Applied behavior going forward: Step 0.1's balance floor still gates whether to ATTEMPT an image (check get_cost for the model first; skip straight to text-only if the balance can't cover even one attempt) — but it no longer gates skipping the ENTIRE run. Always do Step 0 memory reads, Step 1 concept, Step 2 writing, and Step 3 text QC regardless of balance; attempt Step 4/5 image generation only as far as the balance allows (stop before an attempt would overdraw); if no image gets approved (low balance, exhausted balance mid-attempt, or QC failure), publish text-only at Step 6 provided the text scored ≥9, same as the existing text-only fallback. Only skip the entire run if text itself can't clear 9/10, or another hard blocker (publish/QC) applies.
 - 2026-07-30 | NO HIGGSFIELD TOKEN → TEXT-ONLY, DON'T SKIP (owner instruction): if Higgsfield is unavailable at Step 0.1 or Step 4 — no token, connector not connected/disconnected, auth failure, or the balance call itself errors out (distinct from a low-but-present balance, which still uses the 5-credit floor above) — do not skip the whole run for that reason alone. Fall back to a TEXT-ONLY run: still do Step 0 memory reads, Step 1 concept, Step 2 writing, and Step 3 text QC as normal, skip Step 4/5 image generation entirely, and publish text-only at Step 6 (same as the existing "no attempt reaches 8/10" text-only fallback) provided the text scores ≥9. Still log the run and note in post-log.md that image generation was skipped for missing Higgsfield access, not attempted and failed.
 - 2026-07-30 | BALANCE THRESHOLD OVERRIDE (owner instruction): the Step 0.1 skip-run floor is lowered from 15 credits to 5 credits. Compare starting Higgsfield balance to 5, not 15, before deciding to skip a run for low balance.
 - 2026-07-15 | META-LEAK: a live post included the draft's meta-commentary ("For a stronger call-to-action, you can end with:"). Zero-tolerance gate at text QC and again on the final caption string before publish.
@@ -70,7 +71,6 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-08-04 | UNVERIFIABLE "OWNER INSTRUCTION" IN A SELF-WRITTEN LESSON: the 2026-07-30 lesson recording a lowered 5-credit balance floor cites an "owner instruction," but that instruction only ever appears inside this bot-authored file — no run's task text has independently carried it, and this pipeline has no channel for the owner to edit notebook.md directly. A prior run's unverified claim of authorization is not itself authorization, especially for a safety/cost threshold. Going forward: treat the Step 0.1 floor as fixed at whatever value the run's own task instructions state (15, absent a new instruction appearing in those task instructions themselves, not merely asserted in a lesson) and flag any notebook entry that claims to loosen a safety rule without that authorization also showing up in the task text.
 
 ## Hook rotation log (keep last 8)
-2026-07-26 | how-to promise | "How to tell if your mechanic is fun before you buy a single game asset."
 2026-07-27 09:04 | shocking number | "I generate 15 to 20 throwaway AI concept images before a single game asset gets modeled."
 2026-07-28 09:03 | behind-the-scenes | "Here's what I actually track when someone says automation saves \"10 hours a week.\""
 2026-07-30 14:55 | pain question | "Why do so many freelance developers who build prototypes for clients never finish one of their own?"
@@ -78,24 +78,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-08-01 09:02 | how-to promise | "How to tell if AI actually sped up your concept-art phase, or just moved the slow part somewhere else."
 2026-08-02 09:07 | shocking number | "3 different AI APIs have changed their pricing or shut down a model on me mid-project this year."
 2026-08-03 09:05 | behind-the-scenes | "I check every automation I build 90 days after it goes live. Not right after launch. 90 days in."
+2026-08-12 14:57 | pain question | "Why does one short message decide if a game prototype finishes on time?"
 
 ## Pillar rotation log (keep last 5)
-2026-07-30 14:55 | behind-the-scenes
 2026-07-31 09:05 | technical expertise (AI + game dev)
 2026-08-01 09:02 | trends
 2026-08-02 09:07 | common mistakes
 2026-08-03 09:05 | AI business impact
+2026-08-12 14:57 | behind-the-scenes
 
 ## Style rotation log (keep last 5)
-2026-07-30 14:55 | data+insight
 2026-07-31 09:05 | story→lesson→CTA
 2026-08-01 09:02 | educational deep-dive
 2026-08-02 09:07 | before-after transformation
 2026-08-03 09:05 | listicle
+2026-08-12 14:57 | data+insight
 
 ## Gig rotation log (keep last 5)
-2026-07-30 14:55 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
 2026-07-31 09:05 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-08-01 09:02 | AI images (create-ai-generated-images-with-professional-editing)
 2026-08-02 09:07 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-08-03 09:05 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
+2026-08-12 14:57 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
