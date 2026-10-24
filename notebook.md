@@ -69,9 +69,10 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 - 2026-07-28 | MAIN SUBJECT OVERLAPS THE OVERLAY TEXT: a centered hourglass scene (topic: honest breakdown of the "10 hours a week" automation claim) was prompted to sit in the center with the overlay in the "upper or left third," but the model rendered the hourglass tall enough that its top bulb physically overlapped and cut into the bottom stroke of a letter in the second overlay line ("HOURS"). Spelling was still technically correct and legible, but cost 1 point each on thumbnail readability and zero-artifacts (8/10). Distinct from the prior prop-detail lessons (2026-07-24, 2026-07-26) — this is the main subject's silhouette, not a secondary prop's surface texture, encroaching into the text safe zone. Fix: when a scene's main subject is vertically tall/centered, explicitly cap its height in the prompt (e.g. "the subject occupies only the lower two-thirds of the frame, with a clear gap below the overlay text — nothing overlaps or touches the overlay text") rather than relying on "upper or left third" positioning alone to keep the two apart.
 - 2026-08-02 | OVERLAY WORD DUPLICATION: a 3-word/4-token overlay ("3 APIS, ZERO WARNING") rendered with "ZERO" duplicated ("3 APIS, ZERO ZERO WARNING") on the first generation attempt — an automatic spelling-gate FAIL, distinct from the 2026-07-15 trailing-mark artifact (that was a stray symbol, this was a whole extra word). Not caused by an exact-count claim (the 2026-07-16/07-25 numeric-mismatch lessons don't apply here — nothing in the scene was being counted). Fix that worked: rewrite the overlay-text prompt line to explicitly enumerate each word/line as a separate labeled item ("line 1 = ..., line 2 = ..., line 3 = ..."), state the word count, and add an explicit "do not repeat any word" instruction — regeneration with this stricter phrasing produced the correct text on the next attempt. Continue to spell out and letter-by-letter verify every overlay on every attempt, even short ones — short overlays are not immune to duplication.
 - 2026-08-04 | UNVERIFIABLE "OWNER INSTRUCTION" IN A SELF-WRITTEN LESSON: the 2026-07-30 lesson recording a lowered 5-credit balance floor cites an "owner instruction," but that instruction only ever appears inside this bot-authored file — no run's task text has independently carried it, and this pipeline has no channel for the owner to edit notebook.md directly. A prior run's unverified claim of authorization is not itself authorization, especially for a safety/cost threshold. Going forward: treat the Step 0.1 floor as fixed at whatever value the run's own task instructions state (15, absent a new instruction appearing in those task instructions themselves, not merely asserted in a lesson) and flag any notebook entry that claims to loosen a safety rule without that authorization also showing up in the task text.
+- 2026-10-24 | ZAPIER LINKEDIN "AUTHENTICATION ERROR" AT PUBLISH (env, distinct from the 2026-07-15 tool-registration, 2026-07-20 quota-exhausted, 2026-07-20 action-key≠tool_name, and 2026-07-21 no-default-connection issues): a fully QC-approved text (9/10) and image (9/10, approved on the 2nd attempt) could not publish — inspect_zapier_actions showed LinkedIn correctly enabled, action key "share" / tool_name "linkedin_create_share_update" resolved correctly, and a valid default connection ("Otabek Ahmedjanov") was already set — yet execute_zapier_write_action failed immediately with a bare "Authentication Error". This was the first run to reach the publish step after a 72-day gap (last real post 2026-08-12), caused by an unrelated 41-run Higgsfield low-balance streak that only ended this run when the account was topped up to ~1795 credits; the LinkedIn OAuth token likely expired or was revoked from disuse during that gap. NOT fixable from inside a session. FIX (owner side): re-authenticate the LinkedIn connection in Zapier (disconnect/reconnect via manage_zapier_connections or the Zapier dashboard) before the next scheduled run. Pipeline rule confirmed: explicit error → stop-and-skip, never blind retry. Rewrite fresh copy next time per the concept-is-fixed-per-run rule rather than reusing this exact draft.
+- 2026-10-24 | IMAGE OVERLAY TEXT GARBLES MORE WITH 4 WORDS ON TWO LINES THAN WITH 3: a 4-word overlay ("2D ISN'T ALWAYS CHEAPER") rendered fully garbled on attempt 1 — a stray unrequested "=" symbol inserted between words 1–2, and words "ALWAYS" and "CHEAPER" both scrambled into unreadable letterforms. The same prompt style (word-by-word enumeration, "do not repeat any word") had worked fine for shorter overlays before. Fix that worked: cut the overlay to 3 words ("2D ISN'T CHEAPER") and add an explicit "no equals sign, no mathematical symbols, no extra punctuation between words" instruction — attempt 2 rendered perfectly on the first try. When a 4-word overlay is hard to compress further, consider defaulting to 3 words or fewer as the safer target, not just the stated "max 4" ceiling.
 
 ## Hook rotation log (keep last 8)
-2026-07-27 09:04 | shocking number | "I generate 15 to 20 throwaway AI concept images before a single game asset gets modeled."
 2026-07-28 09:03 | behind-the-scenes | "Here's what I actually track when someone says automation saves \"10 hours a week.\""
 2026-07-30 14:55 | pain question | "Why do so many freelance developers who build prototypes for clients never finish one of their own?"
 2026-07-31 09:05 | mini-story opener | "A client's Unity project had six scripts all named some version of \"GameManager.\""
@@ -79,24 +80,25 @@ Extend the topic catalog only when a run genuinely needs it: max 1–2 additions
 2026-08-02 09:07 | shocking number | "3 different AI APIs have changed their pricing or shut down a model on me mid-project this year."
 2026-08-03 09:05 | behind-the-scenes | "I check every automation I build 90 days after it goes live. Not right after launch. 90 days in."
 2026-08-12 14:57 | pain question | "Why does one short message decide if a game prototype finishes on time?"
+2026-10-24 09:14 | mini-story opener | "A client told me his 2D game would be the \"cheap\" option."
 
 ## Pillar rotation log (keep last 5)
-2026-07-31 09:05 | technical expertise (AI + game dev)
 2026-08-01 09:02 | trends
 2026-08-02 09:07 | common mistakes
 2026-08-03 09:05 | AI business impact
 2026-08-12 14:57 | behind-the-scenes
+2026-10-24 09:14 | technical expertise (AI + game dev)
 
 ## Style rotation log (keep last 5)
-2026-07-31 09:05 | story→lesson→CTA
 2026-08-01 09:02 | educational deep-dive
 2026-08-02 09:07 | before-after transformation
 2026-08-03 09:05 | listicle
 2026-08-12 14:57 | data+insight
+2026-10-24 09:14 | story→lesson→CTA
 
 ## Gig rotation log (keep last 5)
-2026-07-31 09:05 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
 2026-08-01 09:02 | AI images (create-ai-generated-images-with-professional-editing)
 2026-08-02 09:07 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-08-03 09:05 | AI systems/automation (build-ai-websites-chatbots-mobile-apps-and-custom-software)
 2026-08-12 14:57 | UE5 prototyping (build-your-unreal-engine-5-game-or-prototype-fast)
+2026-10-24 09:14 | Unity/C#/3D (develop-games-in-unity-with-c-sharp-and-3d-assets)
